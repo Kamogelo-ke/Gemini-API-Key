@@ -1,9 +1,8 @@
-# utils.py
 def print_response(response):
-    """Print Gemini response safely"""
-    print("=== Gemini API Response ===")
-    # response.text may be model-dependent; adjust if structure differs
+    """Print Gemini API response neatly"""
+    print("\n=== Gemini API Response ===\n")
     try:
         print(response.text)
     except Exception:
         print(str(response))
+    print("\n===========================\n")

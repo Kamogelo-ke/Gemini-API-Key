@@ -1,4 +1,3 @@
-# main.py
 from dotenv import load_dotenv
 import os
 from google import generativeai as genai
@@ -15,11 +14,14 @@ if not API_KEY:
 # Configure Gemini API
 genai.configure(api_key=API_KEY)
 
-# Create the model
-model = genai.GenerativeModel("gemini-pro")
+# Create the model (use supported name)
+model = genai.GenerativeModel("gemini-2.5-pro")
+
+# Ask the user for input
+prompt = input("Enter your prompt for Gemini: ")
 
 # Generate content
-response = model.generate_content("Write a short, friendly greeting about coding in Python.")
+response = model.generate_content(prompt)
 
 # Print the model's response
 print_response(response)
